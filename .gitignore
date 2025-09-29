@@ -1,0 +1,8 @@
+# macOS system files
+.DS_Store
+
+# VS Code files
+.vscode/
+
+# Live Server local files
+.live/

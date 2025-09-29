@@ -1,0 +1,14 @@
+/* Basic Reset for cross-device compatibility */
+* {
+    box-sizing: border-box; /* Ensures padding and border don't increase the element's overall width/height */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4; /* Light background for the page */
+    color: #333; /* Dark text */
+    padding: 20px;
+}
