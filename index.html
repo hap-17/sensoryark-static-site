@@ -12,11 +12,13 @@
 
     <nav class="navbar">
         <div class="logo-area">
-            <a href="#">Sensory Ark Inc.</a>
+            <a href="#" class="logo">
+                <img src="img/logo.jpeg" alt="Sensory Ark Logo" height="30">
+            </a>
         </div>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#welcome">Home</a></li>
+            <li><a href="#what-is-ot">Therapy</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -24,70 +26,83 @@
 
     <main>
 
-        <section id="home" class="hero">
-            <div class="container">
-                <h1>Welcome to Sensory Ark</h1>
-                <p>Building beautiful, responsive web experiences for your custom domain.</p>
+    <section id="welcome" class="hero content-block default-bg">
+        <div class="container">
+            <div class="text-side">
+                <h1>Supporting children to thrive through occupational therapy</h1>
+                <p>Welcome to Sensory Ark Inc. with a compelling message about supporting children and their families through occupational therapy. We help build a foundation for lifelong success.</p>
                 <a href="#contact" class="btn">Get in Touch</a>
+                <a href="#services" class="btn-secondary">Learn More</a>
             </div>
-        </section>
-
-        <section id="about" class="content-section">
-            <div class="container">
-                <h2>Our Mission</h2>
-                <p>We are dedicated to creating accessible and visually stunning static websites.</p>
-                <div class="image-placeholder">
-                    [Placeholder for an About Us Image]
-                </div>
+            <div class="image-side">
+                <img src="img/about-us.jpg" alt="Children and families receiving therapy" class="responsive-img">
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="services" class="content-section grey-bg">
-            <div class="container">
-                <h2>What We Offer</h2>
+    <section id="what-is-ot" class="content-section content-block grey-bg">
+        <div class="container">
+            <div class="text-side">
+                <h2>What is occupational therapy for children</h2>
+                <p>Detailed explanation of what Occupational Therapy is and its importance in children's development. It focuses on helping children perform daily tasks and activities crucial for their growth.</p>
+                <a href="#" class="read-more">Read More →</a>
+            </div>
+            <div class="image-side">
+                <img src="img/about-us-2.jpg" alt="Therapist working with a child" class="responsive-img">
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="content-section content-block custom-bg reverse-layout">
+        <div class="container">
+            <div class="text-side">
+                <h2>Building motor skills and coordination</h2>
+                <p>Description of how occupational therapy helps build motor development and coordination. Our specialized programs focus on fine and gross motor skills essential for learning and play.</p>
+                <a href="#" class="read-more">Read More →</a>
+            </div>
+            <div class="image-side">
+                <img src="img/about-us-3.jpg" alt="Children playing games" class="responsive-img">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="content-section contact-bg">
+        <div class="container">
+            <div class="contact-info">
+                <h2>Contact us</h2>
+                <p>Provide contact details for visitors to reach Sensory Ark Inc.</p>
                 <ul>
-                    <li>Responsive Design (Mobile-first)</li>
-                    <li>Fast Static Hosting (GitHub Pages)</li>
-                    <li>Custom Web Forms (Web3Forms Integration)</li>
+                    <li>Email: contact@sensoryark.com</li>
+                    <li>Phone: (555) 123-4567</li>
+                    <li>Address: 123 Therapy Lane, City, State</li>
                 </ul>
             </div>
-        </section>
 
-        <section id="contact" class="content-section">
-            <div class="container">
-                <h2>Contact Us</h2>
-                <p>Have a project idea? Fill out the form below and let's discuss it.</p>
-                <div class="form-container">
-                    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+            <div class="form-wrapper">
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_GOES_HERE">
+                    <input type="text" name="security" style="display:none;" tabindex="-1" autocomplete="off">
+                    <input type="hidden" name="redirect" value="https://web3forms.com/success">
 
-                        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_GOES_HERE">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
 
-                        <input type="text" name="security" style="display:none;" tabindex="-1" autocomplete="off">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
 
-                        <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone_number" required pattern="^\d{10}$" title="Phone number must contain exactly 10 digits (e.g., 5551234567)">
 
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                        <label for="phone">Phone Number:</label>
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="phone_number"
-                            required
-                            pattern="^\d{10}$"
-                            title="Phone number must contain exactly 10 digits (e.g., 5551234567)"
-                        >
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" required></textarea>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
+</main>
 
     <footer>
         <div class="container">
