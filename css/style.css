@@ -1,14 +1,112 @@
-/* Basic Reset for cross-device compatibility */
+/* 1. Global Reset & Typography */
 * {
-    box-sizing: border-box; /* Ensures padding and border don't increase the element's overall width/height */
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4; /* Light background for the page */
-    color: #333; /* Dark text */
-    padding: 20px;
+    background-color: #ffffff; /* Clean white background */
+    color: #333;
+}
+
+/* Common element to center and limit content width */
+.container {
+    max-width: 1200px; /* Max width for large screens */
+    width: 90%; /* Use 90% of the screen width, leaving padding on sides */
+    margin: auto; /* Centers the container horizontally */
+    padding: 20px 0;
+}
+
+/* Styling for buttons */
+.btn {
+    display: inline-block;
+    background: #007bff; /* Primary blue color */
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* 2. Navigation Bar (Mobile-First Approach) */
+.navbar {
+    background: #333;
+    color: #fff;
+    padding: 10px 5%;
+    display: flex; /* FLEXBOX: Allows children (logo and links) to align easily */
+    justify-content: space-between; /* Pushes logo and links to opposite ends */
+    align-items: center;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none; /* Removes bullet points */
+    display: none; /* By default, hide links on small screens (mobile-first) */
+    padding-left: 0;
+}
+
+/* 3. Section Styling */
+.hero {
+    background: #e9ecef; /* Light gray for the hero section */
+    padding: 80px 0;
+    text-align: center;
+}
+
+.content-section {
+    padding: 60px 0;
+}
+
+.grey-bg {
+    background-color: #f4f4f4;
+}
+
+/* 4. Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* 5. Desktop/Tablet Responsiveness (Media Query) */
+/* When the screen is wider than 768px (a typical tablet size), apply these styles: */
+@media (min-width: 768px) {
+
+    /* Make the navigation links visible and horizontal */
+    .nav-links {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin-left: 20px; /* Space out the links */
+    }
+
+    /* Adjust main content sections for better flow */
+    .content-section .container {
+        display: flex;
+        align-items: center;
+        gap: 40px; /* Space between content and image placeholder */
+    }
+
+    /* Make the image placeholder take up half the width on large screens */
+    .image-placeholder {
+        flex: 1;
+        min-width: 200px; /* Ensures it has some minimum size */
+        height: 200px;
+        background-color: #ccc;
+        text-align: center;
+        line-height: 200px;
+    }
 }
