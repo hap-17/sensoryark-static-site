@@ -92,23 +92,7 @@ footer {
     .nav-links li {
         margin-left: 20px; /* Space out the links */
     }
-
-    /* Adjust main content sections for better flow */
-    .content-section .container {
-        display: flex;
-        align-items: center;
-        gap: 40px; /* Space between content and image placeholder */
-    }
-
-    /* Make the image placeholder take up half the width on large screens */
-    .image-placeholder {
-        flex: 1;
-        min-width: 200px; /* Ensures it has some minimum size */
-        height: 200px;
-        background-color: #ccc;
-        text-align: center;
-        line-height: 200px;
-    }
+    
 }
 /* 6. Contact Form Styling */
 
@@ -143,4 +127,154 @@ footer {
 .contact-form textarea {
     resize: vertical; /* Allows users to resize vertically, but not horizontally */
     min-height: 150px;
+}
+
+/* 6.5. Image and Media Responsiveness */
+
+/* Core fix for large images breaking layout inside Flexbox */
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    width: 100%; /* FIX: Ensures image shrinks to fit the container */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    border-radius: 8px; /* Optional: adds a nice rounded corner */
+}
+
+/* Fix for the tiny logo in the navbar */
+.navbar .logo img {
+    height: 40px; /* FIX: Increased height for better visibility */
+    width: auto;
+}
+
+/* Update image-side container styling */
+.image-side {
+    max-width: 100%;
+    height: 100%;
+}
+
+/* Remove old placeholder styling for the image container now that we have an image */
+.image-placeholder {
+    /* The HTML structure changed, so we override the old image placeholder rules */
+    background-color: transparent !important;
+    height: auto !important;
+    line-height: normal;
+}
+
+/* 7. Custom Design Colors */
+/* Define the custom colors used in the design blocks */
+.default-bg {
+    background-color: #ffffff; /* White background for Section 1 */
+}
+
+.grey-bg {
+    background-color: #f7f7f7; /* Light grey background for Section 2 (was slightly different before, this is cleaner) */
+}
+
+.custom-bg {
+    background-color: #7b5e68; /* Dark Mauve/Brown for Section 3 (Matching the design image) */
+    color: #ffffff; /* Light text for dark background */
+}
+
+/* Ensure links/buttons are visible on the custom-bg */
+.custom-bg a {
+    color: #e9ecef; /* Light link color */
+}
+
+/* Style for the Contact Us section background (bottom) */
+.contact-bg {
+    background-color: #f7f7f7; /* Same light grey as Section 2 */
+}
+/* 8. Desktop/Tablet Responsiveness (Media Query) */
+/* When the screen is wider than 768px, apply these column layouts: */
+@media (min-width: 768px) {
+
+    /* Make the navigation links visible and horizontal */
+    .nav-links {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin-left: 20px;
+    }
+
+    /* CORE LAYOUT: Flexbox for Content Blocks */
+    .content-block .container {
+        display: flex; /* Enable flexbox for the children (text-side and image-side) */
+        align-items: center; /* Vertically center the content */
+        gap: 80px; /* Space between the two columns */
+        padding: 40px 0; /* Add more padding for space */
+    }
+
+    /* Column Widths */
+    .text-side {
+        flex: 1.5; /* Takes up 1.5 times the space of the image side (e.g., 60%) */
+    }
+
+    .image-side {
+        flex: 1; /* Takes up 1 part of the space (e.g., 40%) */
+    }
+
+    /* REVERSE LAYOUT: Image on the Left (Used for Section 3) */
+    .reverse-layout .container {
+        flex-direction: row-reverse; /* Reverses the order of the text and image */
+    }
+
+    /* Contact Section Layout (Side-by-side info and form) */
+    .contact-section .container {
+        display: flex;
+        align-items: flex-start; /* Align to the top */
+        gap: 60px;
+    }
+
+    .contact-info {
+        flex: 1;
+    }
+
+    .form-wrapper {
+        flex: 1;
+    }
+}
+/* 9. Typography and Component Polish */
+
+h1 {
+    font-size: 2.5em; /* Larger hero header */
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 1em;
+}
+
+.text-side p {
+    margin-bottom: 1.5em; /* Space out paragraph text */
+}
+
+/* Secondary Button (used in the hero section) */
+.btn-secondary {
+    display: inline-block;
+    color: #1f74b6; /* Primary brand color */
+    border: 2px solid #1f74b6;
+    background: transparent;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    margin-left: 10px; /* Space it out from the primary button */
+}
+
+.btn-secondary:hover {
+    background: #1f74b6;
+    color: #ffffff;
+}
+
+/* Read More Link (used in inner sections) */
+.read-more {
+    display: inline-block;
+    color: #1f74b6;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
 }
