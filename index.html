@@ -12,7 +12,7 @@
 
     <nav class="navbar">
         <div class="logo-area">
-            <a href="#">Sensory Ark</a>
+            <a href="#">Sensory Ark Inc.</a>
         </div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
@@ -57,8 +57,32 @@
             <div class="container">
                 <h2>Contact Us</h2>
                 <p>Have a project idea? Fill out the form below and let's discuss it.</p>
-                <div id="form-placeholder">
-                    [Web3Forms Contact Form Placeholder]
+                <div class="form-container">
+                    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+
+                        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_GOES_HERE">
+
+                        <input type="text" name="security" style="display:none;" tabindex="-1" autocomplete="off">
+
+                        <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="phone">Phone Number:</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone_number"
+                            required
+                            pattern="^\d{10}$"
+                            title="Phone number must contain exactly 10 digits (e.g., 5551234567)"
+                        >
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -67,7 +91,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Sensory Ark. All rights reserved.</p>
+            <p>&copy; 2025 Sensory Ark Inc. All rights reserved.</p>
         </div>
     </footer>
 

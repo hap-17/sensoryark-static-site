@@ -110,3 +110,37 @@ footer {
         line-height: 200px;
     }
 }
+/* 6. Contact Form Styling */
+
+.form-container {
+    max-width: 600px; /* Limits the form width on large screens */
+    margin: 20px auto; /* Centers the form */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.contact-form label {
+    display: block; /* Makes the label take up its own line */
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* This is the key block where we need to add the fix! */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%; /* Makes fields full width, essential for mobile */
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allows users to resize vertically, but not horizontally */
+    min-height: 150px;
+}
