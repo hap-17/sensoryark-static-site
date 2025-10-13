@@ -340,3 +340,8 @@ h2 {
         flex: 1;
     }
 }
+/* Styling for the Services Section specifically */
+#services {
+    background-color: #FFF8DC; /* Setting background to Lighter Sunny Yellow */
+    padding: 60px 0; /* Ensures consistent vertical padding */
+}
