@@ -41,6 +41,7 @@ body {
     background: #192C6B; /* BRAND COLOR: Deep Navy Blue */
     color: #fff;
     padding: 10px 5%;
+    min-height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -169,7 +170,7 @@ footer {
 
 /* Fix for the logo in the navbar */
 .navbar .logo img {
-    height: 50px; /* Increased height for better visibility */
+    height: 100px; /* Increased height for better visibility */
     width: auto;
     vertical-align: middle;
 }
