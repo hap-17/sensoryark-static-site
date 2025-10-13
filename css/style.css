@@ -134,36 +134,55 @@ footer {
 }
 
 /* 5. Contact Form Styling */
-.form-container {
-    max-width: 100%;
-    margin: 0;
-    padding: 20px;
-    border: none;
-    border-radius: 8px;
-    background-color: transparent;
+
+
+/* Use Flexbox for the row containing Name and Email */
+.form-row {
+    display: flex;
+    gap: 20px; /* Space between the Name and Email inputs */
+    margin-bottom: 20px;
 }
 
-.contact-form label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
+.input-group {
+    /* Ensures inputs are full width of their container */
+    flex: 1;
+    margin-bottom: 0; /* Clear previous margins */
 }
 
+/* Base style for all form inputs/textareas */
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form input[type="tel"],
 .contact-form textarea {
     width: 100%;
-    padding: 10px;
+    padding: 15px 12px; /* Increase padding for a taller, cleaner look */
     margin-top: 5px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    border: 1px solid #ccc; /* Lighter border */
+    border-radius: 8px; /* Rounded corners from the design */
     font-size: 16px;
+    background-color: #f9f9f9; /* Subtle light background */
 }
 
-.contact-form textarea {
-    resize: vertical;
-    min-height: 150px;
+.contact-form label {
+    font-size: 14px;
+    color: #555; /* Slightly lighter label color */
+    margin-bottom: 5px;
+}
+
+.contact-form button.btn {
+    width: 100%; /* Make the button full width */
+    margin-top: 25px;
+}
+
+/* Ensure mobile stacking on smaller screens */
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column; /* Stack name/email vertically */
+        gap: 0;
+    }
+    .input-group {
+        margin-bottom: 20px;
+    }
 }
 
 /* 6. Image and Media Responsiveness */
@@ -344,4 +363,34 @@ h2 {
 #services {
     background-color: #FFF8DC; /* Setting background to Lighter Sunny Yellow */
     padding: 60px 0; /* Ensures consistent vertical padding */
+}
+/* Styling for the Contact Information Side */
+.contact-info {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff; /* White background for the info card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h2 {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.contact-detail {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-detail i {
+    font-size: 20px;
+    color: #192C6B; /* Deep Navy Blue Icon */
+    margin-right: 15px;
+    width: 30px; /* Gives icons a fixed width */
+    text-align: center;
+}
+
+.contact-detail h3 {
+    display: none; /* Hide sub-header, just show the contact value */
 }
