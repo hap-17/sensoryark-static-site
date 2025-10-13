@@ -8,15 +8,15 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #ffffff; /* Clean white background */
+    background-color: #ffffff;
     color: #333;
 }
 
 /* Common element to center and limit content width */
 .container {
-    max-width: 1200px; /* Max width for large screens */
-    width: 90%; /* Use 90% of the screen width, leaving padding on sides */
-    margin: auto; /* Centers the container horizontally */
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
     padding: 20px 0;
 }
 
@@ -33,15 +33,15 @@ body {
 }
 
 .btn:hover {
-    background: #101e4a; /* Darker Navy on hover */
+    background: #101e4a;
 }
 
 /* 2. Navigation Bar (Mobile-First Approach) */
 .navbar {
-    background: #192C6B; /* BRAND COLOR: Deep Navy Blue */
+    background: #192C6B;
     color: #fff;
     padding: 10px 5%;
-    min-height: 80px;
+    min-height: 80px; /* Logo Fix: Ensure bar is tall enough */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,12 +52,19 @@ body {
     text-decoration: none;
 }
 
+/* Logo Fix: Set proportional size */
+.navbar .logo img {
+    height: 60px; /* Set to 60px to fit 80px bar well */
+    width: auto;
+    vertical-align: middle;
+}
+
 /* Base state for links: Hidden off-screen (Mobile View) */
 .nav-links {
     list-style: none;
     padding-left: 0;
 
-    display: flex; /* Use flex for mobile stacking */
+    display: flex;
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -90,11 +97,12 @@ body {
     margin: 15px 0; /* Vertical margin for mobile stacking */
 }
 
+
 /* 3. Section Styling & Brand Background Colors */
 .hero {
     background: #FFF8DC; /* BRAND COLOR: Lighter Sunny Yellow */
     padding: 80px 0;
-    text-align: left; /* Aligns hero content to the left side */
+    text-align: left;
 }
 
 .content-section {
@@ -127,12 +135,12 @@ footer {
 
 /* 5. Contact Form Styling */
 .form-container {
-    max-width: 100%; /* Changed to 100% to work better within Flex wrapper */
+    max-width: 100%;
     margin: 0;
     padding: 20px;
-    border: none; /* Removed border */
+    border: none;
     border-radius: 8px;
-    background-color: transparent; /* Removed background color, let parent handle it */
+    background-color: transparent;
 }
 
 .contact-form label {
@@ -163,16 +171,9 @@ footer {
     max-width: 100%;
     height: auto;
     display: block;
-    width: 100%; /* FIX: Ensures image shrinks to fit the container */
+    width: 100%;
     object-fit: cover;
     border-radius: 8px;
-}
-
-/* Fix for the logo in the navbar */
-.navbar .logo img {
-    height: 100px; /* Increased height for better visibility */
-    width: auto;
-    vertical-align: middle;
 }
 
 /* Update image-side container styling */
@@ -182,7 +183,6 @@ footer {
 }
 
 /* 7. Typography and Component Polish */
-
 h1 {
     font-size: 2.5em;
     margin-bottom: 0.5em;
@@ -200,7 +200,7 @@ h2 {
 /* Secondary Button (used in the hero section) */
 .btn-secondary {
     display: inline-block;
-    color: #192C6B; /* BRAND COLOR: Deep Navy Blue */
+    color: #192C6B;
     border: 2px solid #192C6B;
     background: transparent;
     padding: 10px 20px;
@@ -219,7 +219,7 @@ h2 {
 /* Read More Link (used in inner sections) */
 .read-more {
     display: inline-block;
-    color: #192C6B; /* BRAND COLOR: Deep Navy Blue */
+    color: #192C6B;
     text-decoration: none;
     font-weight: bold;
     margin-top: 10px;
@@ -227,7 +227,6 @@ h2 {
 
 
 /* 8. Services Grid Layout */
-
 .section-header {
     text-align: center;
     margin-bottom: 40px;
@@ -245,14 +244,14 @@ h2 {
     background-color: #ffffff;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Subtle shadow for visual depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
     text-align: center;
-    height: 100%; /* Ensures all cards stretch to the same height */
+    height: 100%;
 }
 
 .service-card i {
     font-size: 40px;
-    color: #192C6B; /* Deep Navy Blue for icons */
+    color: #192C6B;
     margin-bottom: 15px;
 }
 
@@ -261,22 +260,14 @@ h2 {
     margin-bottom: 10px;
 }
 
-/* Desktop Grid: Create the 3-column layout */
-@media (min-width: 768px) {
-    .services-grid {
-        /* Desktop: 3 equal columns */
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-    }
-}
 
-/* 9. Desktop/Tablet Responsiveness (Media Query) */
-/* This is the most crucial part for your two-column layout */
+/* 9. Desktop/Tablet Responsiveness (FINAL MEDIA QUERY) */
+/* This is the consolidated and corrected media query block */
 @media (min-width: 768px) {
 
     /* HIDE HAMBURGER ICON */
     .menu-toggle {
-        display: none !important; /* Forces the icon to hide on wide screens */
+        display: none !important;
     }
 
     /* RESTORE DESKTOP NAVIGATION LINKS */
@@ -284,9 +275,12 @@ h2 {
         /* Essential: Overrides mobile positioning */
         position: static !important;
         right: auto !important;
-        gap: 15px !important;
 
         display: flex !important; /* FORCES HORIZONTAL DISPLAY */
+
+        /* NEW: This fixes the spacing and link alignment */
+        gap: 25px !important; /* Use gap for clean spacing */
+
         width: auto !important;
         height: auto !important;
 
@@ -298,17 +292,22 @@ h2 {
     }
 
     .nav-links li {
-        margin-left: 20px; /* Adds horizontal space */
-        margin-right: 0;
-        margin-top: 0;
-        margin-bottom: 0; /* Ensures all four sides of margin are cleared */
+        /* Removes all conflicting margin properties */
+        margin: 0 !important;
+    }
+
+    /* Desktop Grid: Create the 3-column layout for Services */
+    .services-grid {
+        /* Desktop: 3 equal columns */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
     }
 
     /* CORE LAYOUT: Flexbox for alternating Content Blocks */
     .content-block .container {
-        display: flex; /* Enable flexbox for the children (text-side and image-side) */
-        align-items: center; /* Vertically center the content */
-        gap: 80px; /* Space between the two columns */
+        display: flex;
+        align-items: center;
+        gap: 80px;
         padding: 40px 0;
     }
 
@@ -323,7 +322,7 @@ h2 {
 
     /* REVERSE LAYOUT: Image on the Left (Used for Section 3) */
     .reverse-layout .container {
-        flex-direction: row-reverse; /* Reverses the order of the text and image */
+        flex-direction: row-reverse;
     }
 
     /* Contact Section Layout (Side-by-side info and form) */
@@ -340,9 +339,4 @@ h2 {
     .form-wrapper {
         flex: 1;
     }
-}
-
-/* Class to display the menu when the button is clicked */
-.nav-links.active {
-    right: 0; /* Slide in when 'active' class is added */
 }
