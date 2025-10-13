@@ -203,6 +203,7 @@ h2 {
 
     /* RESET LINKS TO DESKTOP MODE */
     .nav-links {
+        display: flex;
         position: static; /* Reset position */
         width: auto;
         height: auto;
