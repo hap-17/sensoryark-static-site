@@ -219,9 +219,10 @@ h2 {
     }
 
     .nav-links li {
-        margin-left: 20px;
-        /* Ensure mobile margin is overridden if needed */
+        margin-left: 20px; /* Adds horizontal space */
+        margin-right: 0;
         margin-top: 0;
+        margin-bottom: 0; /* Ensures all four sides of margin are cleared */
     }
 
     /* CORE LAYOUT: Flexbox for alternating Content Blocks */
