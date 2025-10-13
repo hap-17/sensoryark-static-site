@@ -202,20 +202,26 @@ h2 {
     }
 
     /* RESTORE DESKTOP NAVIGATION LINKS */
-    .nav-links {
-        display: flex !important; /* Must be flex to show horizontally on desktop */
+     .nav-links {
+        /* Essential: Overrides mobile positioning */
+        position: static !important;
+        right: auto !important;
 
-        /* Reset mobile positioning */
-        position: static;
-        width: auto;
-        height: auto;
-        background: transparent;
-        padding: 0;
-        flex-direction: row;
+        display: flex !important; /* FORCES HORIZONTAL DISPLAY */
+        width: auto !important;
+        height: auto !important;
+
+        /* Reset visual styles */
+        background: transparent !important;
+        padding: 0 !important;
+        flex-direction: row !important;
+        z-index: auto !important;
     }
 
     .nav-links li {
         margin-left: 20px;
+        /* Ensure mobile margin is overridden if needed */
+        margin-top: 0;
     }
 
     /* CORE LAYOUT: Flexbox for alternating Content Blocks */
