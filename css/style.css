@@ -238,6 +238,7 @@ h2 {
         /* Essential: Overrides mobile positioning */
         position: static !important;
         right: auto !important;
+        gap: 15px !important;
 
         display: flex !important; /* FORCES HORIZONTAL DISPLAY */
         width: auto !important;
