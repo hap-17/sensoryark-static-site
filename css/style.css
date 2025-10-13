@@ -198,7 +198,7 @@ h2 {
 
     /* HIDE THE MOBILE MENU ICON ON DESKTOP */
     .menu-toggle {
-        display: none;
+        display: none !important;
     }
 
     /* RESET LINKS TO DESKTOP MODE */
