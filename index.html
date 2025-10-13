@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sensory Ark - Custom Domain Static Site</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 
     <meta name="robots" content="noai, noimageai">
@@ -13,16 +14,20 @@
     <nav class="navbar">
         <div class="logo-area">
             <a href="#" class="logo">
-                <img src="img/logo.jpeg" alt="Sensory Ark Logo" height="30">
+                <img src="img/logo.jpeg" alt="Sensory Ark Logo">
             </a>
         </div>
-        <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
             <li><a href="#welcome">Home</a></li>
             <li><a href="#what-is-ot">Therapy</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#contact">Contact Us</a></li>
-        </ul>
-        </nav>
+            </ul>
+
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
 
     <main>
 
@@ -110,5 +115,14 @@
         </div>
     </footer>
 
+    <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+        // This toggles the 'active' class, which is what slides the menu in/out via CSS
+        navLinks.classList.toggle('active');
+    });
+    </script>
 </body>
 </html>

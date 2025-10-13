@@ -137,7 +137,7 @@ footer {
 
 /* Fix for the logo in the navbar */
 .navbar .logo img {
-    height: 40px; /* Increased height for better visibility */
+    height: 50px; /* Increased height for better visibility */
     width: auto;
     vertical-align: middle;
 }
@@ -196,9 +196,19 @@ h2 {
 /* This is the most crucial part for your two-column layout */
 @media (min-width: 768px) {
 
-    /* Make the navigation links visible and horizontal */
+    /* HIDE THE MOBILE MENU ICON ON DESKTOP */
+    .menu-toggle {
+        display: none;
+    }
+
+    /* RESET LINKS TO DESKTOP MODE */
     .nav-links {
-        display: flex;
+        position: static; /* Reset position */
+        width: auto;
+        height: auto;
+        background: transparent;
+        padding: 0;
+        flex-direction: row; /* Display links horizontally */
     }
 
     .nav-links li {
@@ -241,4 +251,39 @@ h2 {
     .form-wrapper {
         flex: 1;
     }
+}
+/* Mobile Menu Toggle Button */
+.menu-toggle {
+    font-size: 28px; /* Increased size for visibility */
+    cursor: pointer;
+    display: block; /* Show on mobile */
+    color: #fff; /* White icon color */
+    z-index: 1001; /* Ensure icon is above sliding menu */
+}
+
+/* Base styles for mobile links (hidden off-screen) */
+.nav-links {
+    /* Keep existing styles like list-style: none; and padding-left: 0; */
+    display: flex; /* Use flex to stack links vertically */
+    flex-direction: column;
+    position: fixed; /* Fix position relative to the viewport */
+    top: 0;
+    right: -250px; /* Initially hidden off-screen to the right */
+    width: 250px;
+    height: 100vh; /* Full screen height */
+    background: #192C6B; /* Menu background color */
+    padding: 80px 20px 20px; /* Padding for top clearance */
+    transition: right 0.3s ease;
+    z-index: 1000; /* Ensure menu is on top of content */
+}
+
+/* Class to display the menu when the button is clicked */
+.nav-links.active {
+    right: 0; /* Slide in when 'active' class is added */
+}
+
+/* Style the list items inside the mobile menu */
+.nav-links li {
+    width: 100%;
+    margin: 15px 0;
 }
