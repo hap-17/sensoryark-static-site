@@ -225,7 +225,52 @@ h2 {
     margin-top: 10px;
 }
 
-/* 8. Desktop/Tablet Responsiveness (Media Query) */
+
+/* 8. Services Grid Layout */
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    display: grid;
+    /* Mobile-first: Default to 1 column on small screens */
+    grid-template-columns: 1fr;
+    gap: 30px; /* Space between the cards */
+    padding: 20px 0;
+}
+
+.service-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Subtle shadow for visual depth */
+    text-align: center;
+    height: 100%; /* Ensures all cards stretch to the same height */
+}
+
+.service-card i {
+    font-size: 40px;
+    color: #192C6B; /* Deep Navy Blue for icons */
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Desktop Grid: Create the 3-column layout */
+@media (min-width: 768px) {
+    .services-grid {
+        /* Desktop: 3 equal columns */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+}
+
+/* 9. Desktop/Tablet Responsiveness (Media Query) */
 /* This is the most crucial part for your two-column layout */
 @media (min-width: 768px) {
 
