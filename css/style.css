@@ -51,10 +51,42 @@ body {
     text-decoration: none;
 }
 
+/* Base state for links: Hidden off-screen (Mobile View) */
 .nav-links {
     list-style: none;
-    display: none;
     padding-left: 0;
+
+    display: flex; /* Use flex for mobile stacking */
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -250px; /* Hidden state */
+    width: 250px;
+    height: 100vh;
+    background: #192C6B;
+    padding: 80px 20px 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+/* Hamburger Icon - Show on Mobile */
+.menu-toggle {
+    font-size: 28px;
+    cursor: pointer;
+    display: block;
+    color: #fff;
+    z-index: 1001;
+}
+
+/* Class to display the menu when the button is clicked */
+.nav-links.active {
+    right: 0;
+}
+
+/* Style the list items inside the mobile menu */
+.nav-links li {
+    width: 100%;
+    margin: 15px 0; /* Vertical margin for mobile stacking */
 }
 
 /* 3. Section Styling & Brand Background Colors */
@@ -262,38 +294,8 @@ h2 {
         flex: 1;
     }
 }
-/* Mobile Menu Toggle Button */
-.menu-toggle {
-    font-size: 28px; /* Increased size for visibility */
-    cursor: pointer;
-    display: block; /* Show on mobile */
-    color: #fff; /* White icon color */
-    z-index: 1001; /* Ensure icon is above sliding menu */
-}
-
-/* Base styles for mobile links (hidden off-screen) */
-.nav-links {
-    /* Keep existing styles like list-style: none; and padding-left: 0; */
-    display: flex; /* Use flex to stack links vertically */
-    flex-direction: column;
-    position: fixed; /* Fix position relative to the viewport */
-    top: 0;
-    right: -250px; /* Initially hidden off-screen to the right */
-    width: 250px;
-    height: 100vh; /* Full screen height */
-    background: #192C6B; /* Menu background color */
-    padding: 80px 20px 20px; /* Padding for top clearance */
-    transition: right 0.3s ease;
-    z-index: 1000; /* Ensure menu is on top of content */
-}
 
 /* Class to display the menu when the button is clicked */
 .nav-links.active {
     right: 0; /* Slide in when 'active' class is added */
-}
-
-/* Style the list items inside the mobile menu */
-.nav-links li {
-    width: 100%;
-    margin: 15px 0;
 }
