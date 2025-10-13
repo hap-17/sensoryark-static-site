@@ -196,20 +196,22 @@ h2 {
 /* This is the most crucial part for your two-column layout */
 @media (min-width: 768px) {
 
-    /* HIDE THE MOBILE MENU ICON ON DESKTOP */
+    /* HIDE HAMBURGER ICON */
     .menu-toggle {
-        display: none !important;
+        display: none !important; /* Forces the icon to hide on wide screens */
     }
 
-    /* RESET LINKS TO DESKTOP MODE */
+    /* RESTORE DESKTOP NAVIGATION LINKS */
     .nav-links {
-        display: flex;
-        position: static; /* Reset position */
+        display: flex !important; /* Must be flex to show horizontally on desktop */
+
+        /* Reset mobile positioning */
+        position: static;
         width: auto;
         height: auto;
         background: transparent;
         padding: 0;
-        flex-direction: row; /* Display links horizontally */
+        flex-direction: row;
     }
 
     .nav-links li {
