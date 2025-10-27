@@ -394,3 +394,33 @@ h2 {
 .contact-detail h3 {
     display: none; /* Hide sub-header, just show the contact value */
 }
+
+/* Show and style the caterpillar image on larger screens */
+.contact-caterpillar {
+    display: block; /* Show the image on desktop */
+    max-width: 150px; /* Adjust size as needed */
+    height: auto;
+    margin: 30px auto 0 auto; /* Center it below the text */
+    /* If you want to position it in the bottom right corner of the info box */
+    /*
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    */
+}
+
+/* Styling for the Contact Information Side */
+.contact-info {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    position: relative; /* Needed if you want to absolutely position the image later */
+    min-height: 250px; /* Ensure enough height for the image if it's large */
+}
+
+/* ... existing .contact-info styles ... */
+
+.contact-caterpillar {
+    display: none; /* HIDE BY DEFAULT on mobile/tablet screens */
+}
