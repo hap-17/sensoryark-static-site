@@ -36,6 +36,34 @@ body {
     background: #101e4a;
 }
 
+/* Secondary Button (used in the hero section) */
+.btn-secondary {
+    display: inline-block;
+    color: #192C6B; /* BRAND COLOR: Deep Navy Blue */
+    border: 2px solid #192C6B;
+    background: transparent;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    margin-left: 10px;
+}
+
+.btn-secondary:hover {
+    background: #192C6B;
+    color: #ffffff;
+}
+
+/* Read More Link (used in inner sections) */
+.read-more {
+    display: inline-block;
+    color: #192C6B; /* BRAND COLOR: Deep Navy Blue */
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
 /* 2. Navigation Bar (Mobile-First Approach) */
 .navbar {
     background: #192C6B;
@@ -120,21 +148,27 @@ body {
     color: #ffffff;
 }
 
+/* Services Section Background Color */
+#services {
+    background-color: #FFF8DC; /* Setting background to Lighter Sunny Yellow */
+    padding: 60px 0;
+}
+
 /* Ensure links/buttons are visible on the custom-bg */
 .custom-bg a {
     color: #e9ecef;
 }
+
 
 /* 4. Footer */
 footer {
     background: #333;
     color: #fff;
     text-align: center;
-    padding: 1px 0;
+    padding: 10px 0; /* REDUCED PADDING: Makes the footer banner smaller */
 }
 
-/* 5. Contact Form Styling */
-
+/* 5. Contact Form Styling (Cleaned for modern 2-column look) */
 
 /* Use Flexbox for the row containing Name and Email */
 .form-row {
@@ -146,7 +180,7 @@ footer {
 .input-group {
     /* Ensures inputs are full width of their container */
     flex: 1;
-    margin-bottom: 0; /* Clear previous margins */
+    margin-bottom: 0;
 }
 
 /* Base style for all form inputs/textareas */
@@ -155,17 +189,17 @@ footer {
 .contact-form input[type="tel"],
 .contact-form textarea {
     width: 100%;
-    padding: 15px 12px; /* Increase padding for a taller, cleaner look */
+    padding: 15px 12px; /* Increased padding for clean look */
     margin-top: 5px;
-    border: 1px solid #ccc; /* Lighter border */
-    border-radius: 8px; /* Rounded corners from the design */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Rounded corners */
     font-size: 16px;
-    background-color: #f9f9f9; /* Subtle light background */
+    background-color: #f9f9f9;
 }
 
 .contact-form label {
     font-size: 14px;
-    color: #555; /* Slightly lighter label color */
+    color: #555;
     margin-bottom: 5px;
 }
 
@@ -174,7 +208,36 @@ footer {
     margin-top: 25px;
 }
 
-/* Ensure mobile stacking on smaller screens */
+/* Contact Information Side Card */
+.contact-info {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    min-height: 250px;
+}
+
+.contact-info h2 {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.contact-detail {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-detail i {
+    font-size: 20px;
+    color: #192C6B;
+    margin-right: 15px;
+    width: 30px;
+    text-align: center;
+}
+
+/* Mobile Stacking for Form */
 @media (max-width: 600px) {
     .form-row {
         flex-direction: column; /* Stack name/email vertically */
@@ -201,6 +264,14 @@ footer {
     height: 100%;
 }
 
+/* Caterpillar Image Default State (Mobile-First) */
+.contact-caterpillar {
+    display: none; /* HIDE BY DEFAULT on mobile/tablet screens */
+    height: auto;
+    margin: 30px auto 0 auto;
+    max-width: 150px;
+}
+
 /* 7. Typography and Component Polish */
 h1 {
     font-size: 2.5em;
@@ -216,34 +287,6 @@ h2 {
     margin-bottom: 1.5em;
 }
 
-/* Secondary Button (used in the hero section) */
-.btn-secondary {
-    display: inline-block;
-    color: #192C6B;
-    border: 2px solid #192C6B;
-    background: transparent;
-    padding: 10px 20px;
-    margin-top: 10px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-    margin-left: 10px;
-}
-
-.btn-secondary:hover {
-    background: #192C6B;
-    color: #ffffff;
-}
-
-/* Read More Link (used in inner sections) */
-.read-more {
-    display: inline-block;
-    color: #192C6B;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
 
 /* 8. Services Grid Layout */
 .section-header {
@@ -255,7 +298,7 @@ h2 {
     display: grid;
     /* Mobile-first: Default to 1 column on small screens */
     grid-template-columns: 1fr;
-    gap: 30px; /* Space between the cards */
+    gap: 30px;
     padding: 20px 0;
 }
 
@@ -281,7 +324,6 @@ h2 {
 
 
 /* 9. Desktop/Tablet Responsiveness (FINAL MEDIA QUERY) */
-/* This is the consolidated and corrected media query block */
 @media (min-width: 768px) {
 
     /* HIDE HAMBURGER ICON */
@@ -315,9 +357,8 @@ h2 {
         margin: 0 !important;
     }
 
-    /* Desktop Grid: Create the 3-column layout for Services */
+    /* Desktop Grid: Create the 4-column layout for Services */
     .services-grid {
-        /* Desktop: 3 equal columns */
         grid-template-columns: repeat(4, 1fr);
         gap: 25px;
     }
@@ -358,69 +399,9 @@ h2 {
     .form-wrapper {
         flex: 1;
     }
-}
-/* Styling for the Services Section specifically */
-#services {
-    background-color: #FFF8DC; /* Setting background to Lighter Sunny Yellow */
-    padding: 60px 0; /* Ensures consistent vertical padding */
-}
-/* Styling for the Contact Information Side */
-.contact-info {
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #ffffff; /* White background for the info card */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
 
-.contact-info h2 {
-    text-align: left;
-    margin-bottom: 30px;
-}
-
-.contact-detail {
-    margin-bottom: 25px;
-    display: flex;
-    align-items: center;
-}
-
-.contact-detail i {
-    font-size: 20px;
-    color: #192C6B; /* Deep Navy Blue Icon */
-    margin-right: 15px;
-    width: 30px; /* Gives icons a fixed width */
-    text-align: center;
-}
-
-.contact-detail h3 {
-    display: none; /* Hide sub-header, just show the contact value */
-}
-
-/* Show and style the caterpillar image on larger screens */
-.contact-caterpillar {
-    display: block; /* Show the image on desktop */
-    max-width: 150px; /* Adjust size as needed */
-    height: auto;
-    margin: 30px auto 0 auto; /* Center it below the text */
-    /* If you want to position it in the bottom right corner of the info box */
-    /*
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    */
-}
-
-/* Styling for the Contact Information Side */
-.contact-info {
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    position: relative; /* Needed if you want to absolutely position the image later */
-    min-height: 250px; /* Ensure enough height for the image if it's large */
-}
-
-/* ... existing .contact-info styles ... */
-
-.contact-caterpillar {
-    display: none; /* HIDE BY DEFAULT on mobile/tablet screens */
+    /* Show the caterpillar image on desktop */
+    .contact-caterpillar {
+        display: block !important;
+    }
 }
