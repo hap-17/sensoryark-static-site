@@ -290,9 +290,15 @@ h2 {
     margin-bottom: 1em;
 }
 
-.text-side p {
-    margin-bottom: 1.5em;
+.text-side ul {
+    margin-bottom: 1.5em;  /* Matches your paragraph spacing */
+    padding-left: 20px;    /* Indents the bullets */
 }
+
+.text-side li {
+    margin-bottom: 0.8em;  /* Adds breathing room between bullet points */
+}
+
 
 
 /* 8. Services Grid Layout */
