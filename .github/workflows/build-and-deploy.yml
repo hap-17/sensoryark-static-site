@@ -1,0 +1,29 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create .env file with secrets
+        run: |
+          echo "WEB3FORMS_ACCESS_KEY=${{ secrets.WEB3FORMS_ACCESS_KEY }}" > .env
+
+      - name: Run build script
+        run: bash build.sh
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add index.html
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Build: Inject web3forms access key" && git push)
+
