@@ -6,3 +6,6 @@
 
 # Live Server local files
 .live/
+
+# OpenCode internal documentation (keep locally, don't publish)
+opencode-docs/
