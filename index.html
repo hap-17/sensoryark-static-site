@@ -193,7 +193,7 @@
             </div>
 
             <div class="form-wrapper">
-                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
 
                     <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY_PLACEHOLDER">
 
@@ -224,7 +224,7 @@
 
                     <div class="h-captcha" data-captcha="true"></div>
 
-                    <button type="submit" class="btn">Send Message</button>
+                    <button type="submit" id="submitBtn" class="btn">Send Message</button>
                 </form>
             </div>
         </div>
@@ -245,6 +245,43 @@
     menuToggle.addEventListener('click', () => {
         // This toggles the 'active' class, which is what slides the menu in/out via CSS
         navLinks.classList.toggle('active');
+    });
+    </script>
+
+    <!-- Rate Limiting for Contact Form -->
+    <script>
+    const FORM_SUBMIT_KEY = 'sensoryarkFormLastSubmit';
+    const RATE_LIMIT_MS = 60000; // 1 minute
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        const now = Date.now();
+        const lastSubmit = localStorage.getItem(FORM_SUBMIT_KEY);
+        const submitBtn = document.getElementById('submitBtn');
+        
+        // Check if user is submitting too quickly
+        if (lastSubmit && now - lastSubmit < RATE_LIMIT_MS) {
+            e.preventDefault();
+            const secondsRemaining = Math.ceil((RATE_LIMIT_MS - (now - lastSubmit)) / 1000);
+            alert(`Please wait ${secondsRemaining} second${secondsRemaining !== 1 ? 's' : ''} before submitting again.`);
+            return false;
+        }
+        
+        // Store submission time
+        localStorage.setItem(FORM_SUBMIT_KEY, now);
+        
+        // Disable button and show loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.style.opacity = '0.6';
+        submitBtn.style.cursor = 'not-allowed';
+        
+        // Re-enable button after 3 seconds (in case of error)
+        setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+            submitBtn.style.opacity = '1';
+            submitBtn.style.cursor = 'pointer';
+        }, 3000);
     });
     </script>
 
